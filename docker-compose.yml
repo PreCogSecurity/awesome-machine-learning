@@ -1,0 +1,6 @@
+services:
+  scraper:
+    build: .
+    command: python scripts/pull_R_packages.py --output /app/output/Packages.txt
+    volumes:
+      - ./output:/app/output
