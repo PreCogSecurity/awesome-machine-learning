@@ -1,0 +1,11 @@
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+src = ["scripts", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

@@ -1130,6 +1130,60 @@ on MNIST digits[DEEP LEARNING]
 #### General-Purpose Machine Learning
 * [Awesome TensorFlow](https://github.com/jtoy/awesome-tensorflow) - A list of all things related to TensorFlow
 
+<a name="development" />
+## Development
+
+This repository is primarily a curated list, but it ships a small Python
+scraper, [`scripts/pull_R_packages.py`](scripts/pull_R_packages.py), that
+regenerates the R section of this README from the
+[CRAN Machine Learning task view](https://cran.r-project.org/web/views/MachineLearning.html).
+
+### Requirements
+
+* Python 3.9+
+
+### Install
+
+```bash
+pip install -r requirements.txt
+```
+
+For development (running the test suite and the linter):
+
+```bash
+pip install -r requirements-dev.txt
+```
+
+### Run the scraper
+
+```bash
+python scripts/pull_R_packages.py
+```
+
+This writes `Packages.txt` in the current directory. Use `--help` to see the
+available options (`--url` and `--output`).
+
+### Test
+
+```bash
+pytest -q
+```
+
+### Lint
+
+```bash
+ruff check scripts/ tests/
+```
+
+### Docker
+
+```bash
+docker compose run --rm scraper
+```
+
+This builds the image if needed, runs the scraper in a container, and writes
+the generated list to `output/Packages.txt`.
+
 <a name="credits" />
 ## Credits
 
